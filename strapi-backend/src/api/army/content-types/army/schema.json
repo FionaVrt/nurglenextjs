@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "armies",
+  "info": {
+    "singularName": "army",
+    "pluralName": "armies",
+    "displayName": "army",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "designe": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
