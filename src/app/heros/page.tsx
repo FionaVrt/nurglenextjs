@@ -9,7 +9,7 @@ interface Hero {
   name: string;
   design: [
     {
-        url: string;
+      url: string;
     }
   ]
   slug: number
