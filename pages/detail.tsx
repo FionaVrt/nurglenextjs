@@ -30,7 +30,7 @@ const HeroDetail = () => {
     if (id) {
       const fetchHero = async () => {
         try {
-          const response = await axios.get(`http://localhost:1337/api/heros/${id}?populate=*`);
+          const response = await axios.get(`https://strapi-backend-0eap.onrender.com/api/heros/${id}?populate=*`);
           setHero(response.data.data);
         } catch (err) {
           setError('Erreur lors du chargement du héros');
@@ -44,14 +44,14 @@ const HeroDetail = () => {
   if (error) return <div>{error}</div>;
   if (!hero) return <div>Chargement...</div>;
 
-  const imageUrl = hero.attributes.image.data 
-    ? `http://localhost:1337${hero.attributes.image.data.attributes.url}`
+  const imageUrl = hero.attributes.image.data
+    ? `https://strapi-backend-0eap.onrender.com${hero.attributes.image.data.attributes.url}`
     : '/placeholder-image.jpg'; // Utilisez une image par défaut si nécessaire
 
   return (
     <div>
       <h1>{hero.attributes.name}</h1>
-      <Image 
+      <Image
         src={imageUrl}
         alt={hero.attributes.name}
         width={300}

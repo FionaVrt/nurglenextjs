@@ -20,7 +20,7 @@ const Heros = () => {
 
   useEffect(() => {
     const fetchHeroes = async () => {
-      const response = await axios.get('http://localhost:1337/api/heros?populate=*');
+      const response = await axios.get('https://strapi-backend-0eap.onrender.com/api/heros?populate=*');
       setHeroes(response.data.data);
       console.log(response.data.data);
     };
@@ -37,7 +37,7 @@ const Heros = () => {
               <div className="flex items-center mb-2">
                 {hero.design && hero.design[0] && (
                   <Image
-                    src={`http://localhost:1337${hero.design[0].url}`}
+                    src={`https://strapi-backend-0eap.onrender.com${hero.design[0].url}`}
                     alt={hero.name}
                     width={60}
                     height={60}

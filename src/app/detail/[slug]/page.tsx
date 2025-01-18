@@ -21,7 +21,7 @@ interface Hero {
 
 export default async function Hero({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const response = await axios.get(`http://localhost:1337/api/heros?populate=*&filters[slug][$eq]=${slug}`);
+  const response = await axios.get(`https://strapi-backend-0eap.onrender.com/api/heros?populate=*&filters[slug][$eq]=${slug}`);
   const hero: Hero = response.data.data[0];
   console.log(response.data.data);
 
@@ -32,7 +32,7 @@ export default async function Hero({ params }: { params: Promise<{ slug: string 
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/2 p-6">
             <Image
-              src={`http://localhost:1337${hero.design[0].url}`}
+              src={`https://strapi-backend-0eap.onrender.com${hero.design[0].url}`}
               alt={hero.name}
               width={300}
               height={300}

@@ -19,7 +19,7 @@ interface Army {
 }
 
 export default async function Home() {
-  const response = await axios.get(`http://localhost:1337/api/army?populate=*`);
+  const response = await axios.get(`https://strapi-backend-0eap.onrender.com/api/army?populate=*`);
   const army: Army = response.data.data;
   console.log(response.data.data);
 
@@ -32,7 +32,7 @@ export default async function Home() {
         <div className="flex flex-col md:flex-row">
           <div className="md:w-1/2 p-6">
             <Image
-              src={`http://localhost:1337${army.designe[0].url}`}
+              src={`https://strapi-backend-0eap.onrender.com${army.designe[0].url}`}
               alt={army.title}
               width={500}
               height={500}
